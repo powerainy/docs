@@ -124,3 +124,8 @@ COMMIT
 COMMIT
 # END UFW AND DOCKER
 ```
+如果希望允许外部网络访问 Docker 容器提供的服务，比如有一个容器的服务端口是 80。那就可以用以下命令来允许外部网络访问这个服务：
+```bash
+ufw route allow proto tcp from any to any port 80
+```
+这个命令会允许外部网络访问所有用 Docker 发布出来的并且内部服务端口为 80 的所有服务。
